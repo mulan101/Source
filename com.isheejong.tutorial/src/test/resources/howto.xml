@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XML2Response xmlns="http://tempuri.org/"><XML2Result><xs:schema id="pprms" xmlns:xs="http://www.w3.org/2001/XMLSchema"	xmlns="" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"> <xs:element name="pprms" msdata:IsDataSet="true" msdata:Locale="en-US"><xs:complexType>
+					<xs:choice minOccurs="0" maxOccurs="unbounded"><xs:element name="policies"><xs:complexType><xs:sequence><xs:element name="num" type="xs:string" minOccurs="0" /><xs:element name="subject" type="xs:string"	minOccurs="0" />
+									<xs:element name="content" type="xs:string"
+										minOccurs="0" />
+									<xs:element name="revdate" type="xs:string"
+										minOccurs="0" />
+									<xs:element name="prvdate" type="xs:string"
+										minOccurs="0" />
+									<xs:element name="excdate" type="xs:string"
+										minOccurs="0" />
+									<xs:element name="expdate" type="xs:string"
+										minOccurs="0" />
+									<xs:element name="chapter" minOccurs="0" maxOccurs="unbounded">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="depth1" minOccurs="0"
+													maxOccurs="unbounded">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="num" type="xs:string"
+																minOccurs="0" />
+															<xs:element name="subject" type="xs:string"
+																minOccurs="0" />
+															<xs:element name="content" type="xs:string"
+																minOccurs="0" />
+															<xs:element name="sheet" type="xs:string"
+																minOccurs="0" />
+															<xs:element name="depth2" minOccurs="0"
+																maxOccurs="unbounded">
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element name="num" type="xs:string"
+																			minOccurs="0" />
+																		<xs:element name="subject" type="xs:string"
+																			minOccurs="0" />
+																		<xs:element name="content" type="xs:string"
+																			minOccurs="0" />
+																		<xs:element name="sheet" type="xs:string"
+																			minOccurs="0" />
+																		<xs:element name="depth3" minOccurs="0"
+																			maxOccurs="unbounded">
+																			<xs:complexType>
+																				<xs:sequence>
+																					<xs:element name="num" type="xs:string"
+																						minOccurs="0" />
+																					<xs:element name="subject" type="xs:string"
+																						minOccurs="0" />
+																					<xs:element name="content" type="xs:string"
+																						minOccurs="0" />
+																					<xs:element name="sheet" type="xs:string"
+																						minOccurs="0" />
+																					<xs:element name="depth4" minOccurs="0"
+																						maxOccurs="unbounded">
+																						<xs:complexType>
+																							<xs:sequence>
+																								<xs:element name="num" type="xs:string"
+																									minOccurs="0" />
+																								<xs:element name="subject" type="xs:string"
+																									minOccurs="0" />
+																								<xs:element name="content" type="xs:string"
+																									minOccurs="0" />
+																								<xs:element name="sheet" type="xs:string"
+																									minOccurs="0" />
+																							</xs:sequence>
+																						</xs:complexType>
+																					</xs:element>
+																				</xs:sequence>
+																			</xs:complexType>
+																		</xs:element>
+																	</xs:sequence>
+																</xs:complexType>
+															</xs:element>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="thirdPartyCompany" minOccurs="0"
+										maxOccurs="unbounded">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="subject" type="xs:string"
+													minOccurs="0" />
+												<xs:element name="col1Title" type="xs:string"
+													minOccurs="0" />
+												<xs:element name="col2Title" type="xs:string"
+													minOccurs="0" />
+												<xs:element name="col3Title" type="xs:string"
+													minOccurs="0" />
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="trusteeCompany" minOccurs="0"
+										maxOccurs="unbounded">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="subject" type="xs:string"
+													minOccurs="0" />
+												<xs:element name="col1Title" type="xs:string"
+													minOccurs="0" />
+												<xs:element name="col2Title" type="xs:string"
+													minOccurs="0" />
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="star1" minOccurs="0" maxOccurs="unbounded">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="subject" type="xs:string"
+													minOccurs="0" />
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="star2" minOccurs="0" maxOccurs="unbounded">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="subject" type="xs:string"
+													minOccurs="0" />
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="star0" minOccurs="0" maxOccurs="unbounded">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="subject" type="xs:string"
+													minOccurs="0" />
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="groups" minOccurs="0" maxOccurs="unbounded">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="group" minOccurs="0" maxOccurs="unbounded">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="code" type="xs:string"
+																minOccurs="0" />
+															<xs:element name="subject" type="xs:string"
+																minOccurs="0" />
+															<xs:element name="GroupCompany" minOccurs="0"
+																maxOccurs="unbounded">
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element name="code" type="xs:string"
+																			minOccurs="0" />
+																		<xs:element name="name" type="xs:string"
+																			minOccurs="0" />
+																	</xs:sequence>
+																</xs:complexType>
+															</xs:element>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:schema>
+		<diffgr:diffgram xmlns:diffgr="urn:schemas-microsoft-com:xml-diffgram-v1"
+			xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+			<pprms xmlns="">
+				<policies diffgr:id="policies1" msdata:rowOrder="0"
+					diffgr:hasChanges="inserted" msdata:hiddenpolicies_Id="0">
+					<num>0024</num>
+					<subject>개인정보 취급방침 2015-06-16</subject>
+					<content />
+					<revdate>20150609</revdate>
+					<prvdate>20150414</prvdate>
+					<excdate>20150616</excdate>
+					<expdate />
+					<chapter diffgr:id="chapter1" msdata:rowOrder="0"
+						diffgr:hasChanges="inserted" msdata:hiddenchapter_Id="0"
+						msdata:hiddenpolicies_Id="0">
+						<depth1 diffgr:id="depth11" msdata:rowOrder="0"
+							diffgr:hasChanges="inserted" msdata:hiddendepth1_Id="0"
+							msdata:hiddenchapter_Id="0">
+							<num>01</num>
+							<subject>개인정보의 수집 및 이용 목적</subject>
+							<content />
+							<sheet>none</sheet>
+							<depth2 diffgr:id="depth21" msdata:rowOrder="0"
+								diffgr:hasChanges="inserted" msdata:hiddendepth2_Id="0"
+								msdata:hiddendepth1_Id="0">
+								<num>01.01</num>
+								<subject>1. 수집/이용 목적</subject>
+								<content>KT는 수집한 개인정보를 다음의 목적을 위해 이용합니다.</content>
+								<sheet>none</sheet>
+								<depth3 diffgr:id="depth31" msdata:rowOrder="0"
+									diffgr:hasChanges="inserted" msdata:hiddendepth3_Id="0"
+									msdata:hiddendepth2_Id="0">
+									<num>01.01.01</num>
+									<subject>가. 서비스 가입/변경/해지 처리, AS, 청구서발송, 물품(단말기/경품 등)배송, 본인확인,
+										개인식별, 가입의사확인, 고지사항전달, 서비스제공관련 안내, 명의도용 방지를 위한 등록된 이동전화로 가입사실
+										통보, 이용요금 상담 할인 청구(개별/통합/합산) 고지 결제 및 추심, 이용관련 문의 불만 처리, 멤버십서비스
+										제공</subject>
+									<content />
+									<sheet>none</sheet>
+								</depth3>
+								<depth3 diffgr:id="depth32" msdata:rowOrder="1"
+									diffgr:hasChanges="inserted" msdata:hiddendepth3_Id="1"
+									msdata:hiddendepth2_Id="0">
+									<num>01.01.02</num>
+									<subject>나. 만 14세 미만 아동의 개인정보 수집 시 법정 대리인 동의여부 확인</subject>
+									<content />
+									<sheet>none</sheet>
+								</depth3>
+								<depth3 diffgr:id="depth33" msdata:rowOrder="2"
+									diffgr:hasChanges="inserted" msdata:hiddendepth3_Id="2"
+									msdata:hiddendepth2_Id="0">
+									<num>01.01.03</num>
+									<subject>다. 이용요금*위탁수수료의 정산, 서비스이용 확인*점검, 컨텐츠수급, 서비스품질개선, 서비스
+										품질제고를 위한 인구통계학적분석(연령/성별/지역분석 등) 및 이용 형태/선호도 분석, 서비스 제공에 필요한 서버
+										구축*운영, 위치기반서비스, 개인맞춤형서비스 제공&#xD;</subject>
+									<content />
+									<sheet>none</sheet>
+								</depth3>
+								<depth3 diffgr:id="depth34" msdata:rowOrder="3"
+									diffgr:hasChanges="inserted" msdata:hiddendepth3_Id="3"
+									msdata:hiddendepth2_Id="0">
+									<num>01.01.04</num>
+									<subject>라. KT가 제공하는 모든
+										상품/서비스(일반전화,인터넷전화,인터넷,tv,결합상품,이동전화,WiBRO,기타 상품,부가서비스 및 각종 신상품
+										등) 또는 KT의 서비스가 KT그룹사/협력사/제휴사에서 제공하는 서비스[전기통신 방송 IT(솔루션) 교육
+										금융(은행/카드/보험/증권/부동산 등) 부가 기타(쇼핑/예술/건강/여행/생활/스포츠/자동차 등)]와 제휴 결합된
+										상품 및 서비스 또는 요금할인제도의 소개 추천 가입의사확인 신청접수, 고객리텐션, 제휴사에 대한 개인정보 동의
+										수취, 기타 고객혜택 이벤트정보 안내 등의 마케팅활동 및 고객관리&#xD;</subject>
+									<content />
+									<sheet>none</sheet>
+								</depth3>
+								<depth3 diffgr:id="depth35" msdata:rowOrder="4"
+									diffgr:hasChanges="inserted" msdata:hiddendepth3_Id="4"
+									msdata:hiddendepth2_Id="0">
+									<num>01.01.05</num>
+									<subject>마.이동전화서비스의 가입고객을 대상으로 한 본인확인서비스 제공 &#xD;</subject>
+									<content />
+									<sheet>none</sheet>
+								</depth3>
+								<depth3 diffgr:id="depth36" msdata:rowOrder="5"
+									diffgr:hasChanges="inserted" msdata:hiddendepth3_Id="5"
+									msdata:hiddendepth2_Id="0">
+									<num>01.01.06</num>
+									<subject>바.기타 개인정보취급방침에 고지된 수탁자에게 서비스제공 등 계약의 이행에 필요한 업무의 위탁
+									</subject>
+									<content />
+									<sheet>none</sheet>
+								</depth3>
+							</depth2>
+							<depth2 diffgr:id="depth22" msdata:rowOrder="1"
+								diffgr:hasChanges="inserted" msdata:hiddendepth2_Id="1"
+								msdata:hiddendepth1_Id="0">
+								<num>01.02</num>
+								<subject>2. 수집 항목</subject>
+								<content>KT는 회원가입, 상담, 서비스 제공을 위하여 아래와 같이 필요한 최소한의 개인정보만을 수집하며,
+									인종 및 민족, 사상 및 신조, 출신지 및 본적지, 정치적 성향 및 범죄기록, 건강상태 등 고객의 인권을 현저하게
+									침해할 우려가 있는 개인정보는 수집하지 않습니다. 다만, 고객께서 수집에 동의하시는 경우는 예외로
+									합니다.&#xD;</content>
+								<sheet>none</sheet>
+								<depth3 diffgr:id="depth37" msdata:rowOrder="6"
+									diffgr:hasChanges="inserted" msdata:hiddendepth3_Id="6"
+									msdata:hiddendepth2_Id="1">
+									<num>01.02.01</num>
+									<subject>가. 필수정보</subject>
+									<content />
+									<sheet>none</sheet>
+									<depth4 diffgr:id="depth41" msdata:rowOrder="0"
+										diffgr:hasChanges="inserted" msdata:hiddendepth3_Id="6">
+										<num>01.02.01.01</num>
+										<subject>ㅇ 신청인의 성명, 주민등록번호, 여권번호, 외국인등록번호, i-PIN번호, 생년월일,
+											내/외국인, 성별, 휴대폰번호, 연계정보, 중복가입확인정보, (청구지)주소, 연락전화번호, 이메일주소,
+											계좌(카드)정보 등 필요한 최소한의 식별정보&#xD;</subject>
+										<content />
+										<sheet>none</sheet>
+									</depth4>
+									<depth4 diffgr:id="depth42" msdata:rowOrder="1"
+										diffgr:hasChanges="inserted" msdata:hiddendepth3_Id="6">
+										<num>01.02.01.02</num>
+										<subject>ㅇ 요금납부자의 성명, 주민등록번호(여권번호, 외국인등록번호), 청구지 주소, 계약자와의 관계,
+											계좌 정보, 연락전화번호&#xD;</subject>
+										<content />
+										<sheet>none</sheet>
+									</depth4>
+									<depth4 diffgr:id="depth43" msdata:rowOrder="2"
+										diffgr:hasChanges="inserted" msdata:hiddendepth3_Id="6">
+										<num>01.02.01.03</num>
+										<subject>ㅇ 만 14세 미만 미성년자의 경우 법정대리인의 성명, 주민등록번호, 주소, 연락전화번호,
+											계약자와의 관계 (단, 만 14세 미만 아동의 개인정보는 법정대리인의 동의 필요) </subject>
+										<content />
+										<sheet>none</sheet>
+									</depth4>
+								</depth3>
+								<depth3 diffgr:id="depth38" msdata:rowOrder="7"
+									diffgr:hasChanges="inserted" msdata:hiddendepth3_Id="7"
+									msdata:hiddendepth2_Id="1">
+									<num>01.02.02</num>
+									<subject>나. 선택정보</subject>
+									<content />
+									<sheet>none</sheet>
+									<depth4 diffgr:id="depth44" msdata:rowOrder="3"
+										diffgr:hasChanges="inserted" msdata:hiddendepth3_Id="7">
+										<num>01.02.02.01</num>
+										<subject>ㅇ 번호정보 안내 등 부가서비스 이용과 관련된 정보</subject>
+										<content />
+										<sheet>none</sheet>
+									</depth4>
+									<depth4 diffgr:id="depth45" msdata:rowOrder="4"
+										diffgr:hasChanges="inserted" msdata:hiddendepth3_Id="7">
+										<num>01.02.02.02</num>
+										<subject>ㅇ 이용요금의 할인을 위한 국가유공자증명, 복지할인증명 등 제증명 사항</subject>
+										<content />
+										<sheet>none</sheet>
+									</depth4>
+									<depth4 diffgr:id="depth46" msdata:rowOrder="5"
+										diffgr:hasChanges="inserted" msdata:hiddendepth3_Id="7">
+										<num>01.02.02.03</num>
+										<subject>ㅇ 주소변경서비스 이용과 관련된 정보 </subject>
+										<content />
+										<sheet>none</sheet>
+									</depth4>
+								</depth3>
+								<depth3 diffgr:id="depth39" msdata:rowOrder="8"
+									diffgr:hasChanges="inserted" msdata:hiddendepth3_Id="8"
+									msdata:hiddendepth2_Id="1">
+									<num>01.02.03</num>
+									<subject>다. 서비스 이용 또는 업무처리 과정에서 생성되어 수집될 수 있는 정보</subject>
+									<content />
+									<sheet>none</sheet>
+									<depth4 diffgr:id="depth47" msdata:rowOrder="6"
+										diffgr:hasChanges="inserted" msdata:hiddendepth3_Id="8">
+										<num>01.02.03.01</num>
+										<subject>ㅇ 서비스 이용시간/이용기록, 접속로그, 이용컨텐츠, 쿠키, 접속IP 정보, 결제기록,
+											이용정지기록</subject>
+										<content />
+										<sheet>none</sheet>
+									</depth4>
+									<depth4 diffgr:id="depth48" msdata:rowOrder="7"
+										diffgr:hasChanges="inserted" msdata:hiddendepth3_Id="8">
+										<num>01.02.03.02</num>
+										<subject>ㅇ 착/발신 전화번호, 통화시각, 사용도수, 위치정보(기지국위치, GPS정보) 등
+										</subject>
+										<content />
+										<sheet>none</sheet>
+									</depth4>
+								</depth3>
+							</depth2>
+							<depth2 diffgr:id="depth23" msdata:rowOrder="2"
+								diffgr:hasChanges="inserted" msdata:hiddendepth2_Id="2"
+								msdata:hiddendepth1_Id="0">
+								<num>01.03</num>
+								<subject>3. 이용 및 보유 기간</subject>
+								<content />
+								<sheet>none</sheet>
+								<depth3 diffgr:id="depth310" msdata:rowOrder="9"
+									diffgr:hasChanges="inserted" msdata:hiddendepth3_Id="9"
+									msdata:hiddendepth2_Id="2">
+									<num>01.03.01</num>
+									<subject>가. KT는 고객의 개인정보를 고객께 서비스를 제공하는 기간(이용기간) 또는 분쟁처리
+										기간(보유기간) 동안에 한하여 보유하고 이를 활용합니다. 다만, 법률에 특별한 규정이 있는 경우에는 관계 법령에
+										따라 보관됩니다. &#xD;</subject>
+									<content />
+									<sheet>none</sheet>
+									<depth4 diffgr:id="depth49" msdata:rowOrder="8"
+										diffgr:hasChanges="inserted" msdata:hiddendepth3_Id="9">
+										<num>01.03.01.01</num>
+										<subject>ㅇ 이용기간 : 서비스 가입기간(가입일 ~ 해지일) 또는 분쟁기간 동안 &#xD;
+										</subject>
+										<content />
+										<sheet>none</sheet>
+									</depth4>
+									<depth4 diffgr:id="depth410" msdata:rowOrder="9"
+										diffgr:hasChanges="inserted" msdata:hiddendepth3_Id="9">
+										<num>01.03.01.02</num>
+										<subject>ㅇ 보유기간 : 요금정산, 요금 과오납 등 분쟁 대비를 위해 해지 후 6개월까지, 요금
+											미/과납이 있을 경우와 요금관련 분쟁이 계속될 경우에는 해결 시까지 보유 (단, 법령에 특별한 규정이 있을
+											경우 관련 법령에 따라 보관)&#xD;</subject>
+										<content>※ 정보통신서비스의 제공을 위한 개인정보의 수집.이용 관련 세부 내역은 ‘개인정보취급방침’에
+											공개합니다</content>
+										<sheet>none</sheet>
+									</depth4>
+								</depth3>
+							</depth2>
+						</depth1>
+						<depth1 diffgr:id="depth12" msdata:rowOrder="1"
+							diffgr:hasChanges="inserted" msdata:hiddendepth1_Id="1"
+							msdata:hiddenchapter_Id="0">
+							<num>02</num>
+							<subject>고객편의제공을 위한 이용 및 취급 위탁</subject>
+							<content>kt는 kt가 제공하는 모든 상품/서비스(집전화, 인터넷전화, 인터넷, tv, 결합상품,
+								mobile, WiBro, 기타 상품, 부가서비스 및 각종 신상품 등) 또는 kt의 서비스가
+								kt그룹사/협력사/제휴사에서 제공하는 서비스 [전기통신*방송*IT(솔루션)*교육*금융(은행/카드/보험/증권/부동산
+								등) *부가* 기타(쇼핑/예술/건강/여행/생활/스포츠/자동차 등)]와 제휴*결합된 상품 및 서비스 또는 요금할인제도
+								의 소개*추천*가입의사확인*신청접수, 고객리텐션, 제휴사에 대한 개인정보 동의 수취, 기타 고객혜택 이벤트정보
+								안내등의 마케팅활동 및 고객관리 등을 위해 신청인의 정보를 이용합니다</content>
+							<sheet>none</sheet>
+							<depth2 diffgr:id="depth24" msdata:rowOrder="3"
+								diffgr:hasChanges="inserted" msdata:hiddendepth2_Id="3"
+								msdata:hiddendepth1_Id="1">
+								<num>02.01</num>
+								<subject>또한, 위 업무(마케팅활동 및 고객관리 등)의 수행을 위해 해당 수탁사 [ktIS/ktCS 등
+									콜센터, ㈜ITMS법인/신흥정보통신㈜ 등 개통/AS 법인,(주)에이치티엠,소리정보통신(주) 등 유통점,
+									㈜에프엠비스, 한국신용평가정보㈜, 효성ITX㈜,㈜이존시스템]]에 신청인의 개인정보 취급을 위탁하고,
+									고객설문/시장조사 및 고객만족도 조사 등의 업무를 나이스R&amp;C주식회사, ㈜메트릭스, ㈜마케팅인사이트,
+									㈜한국갤럽조사연구소에 위탁합니다</subject>
+								<content />
+								<sheet>none</sheet>
+							</depth2>
+							<depth2 diffgr:id="depth25" msdata:rowOrder="4"
+								diffgr:hasChanges="inserted" msdata:hiddendepth2_Id="4"
+								msdata:hiddendepth1_Id="1">
+								<num>02.02</num>
+								<subject>(수탁사는 증감, 변동이 가능하며 세부내역은 개인정보취급방침에 고지)</subject>
+								<content>※회사의 서비스 제공 등 계약의 이행에 필요한 경우 해당 위탁업무와 수탁자를 회사
+									‘개인정보취급방침’에 공개함으로써, 취급위탁 동의에 갈음합니다.</content>
+								<sheet>none</sheet>
+							</depth2>
+						</depth1>
+					</chapter>
+					<thirdPartyCompany diffgr:id="thirdPartyCompany1"
+						msdata:rowOrder="0" diffgr:hasChanges="inserted"
+						msdata:hiddenpolicies_Id="0">
+						<subject>제3사 제공사</subject>
+						<col1Title>제공받는 자</col1Title>
+						<col2Title>제공하는 개인정보 항목</col2Title>
+						<col3Title>제공받는 자의 이용목적</col3Title>
+					</thirdPartyCompany>
+					<trusteeCompany diffgr:id="trusteeCompany1"
+						msdata:rowOrder="0" diffgr:hasChanges="inserted"
+						msdata:hiddenpolicies_Id="0">
+						<subject>취급위틱수탁사</subject>
+						<col1Title>수탁사</col1Title>
+						<col2Title>위탁목적</col2Title>
+					</trusteeCompany>
+					<star1 diffgr:id="star11" msdata:rowOrder="0"
+						diffgr:hasChanges="inserted" msdata:hiddenpolicies_Id="0">
+						<subject>별표사업자1</subject>
+					</star1>
+					<star2 diffgr:id="star21" msdata:rowOrder="0"
+						diffgr:hasChanges="inserted" msdata:hiddenpolicies_Id="0">
+						<subject>별표사업자2</subject>
+					</star2>
+					<star0 diffgr:id="star01" msdata:rowOrder="0"
+						diffgr:hasChanges="inserted" msdata:hiddenpolicies_Id="0">
+						<subject>제휴가맹점(올레클럽/멤버쉽)</subject>
+					</star0>
+					<groups diffgr:id="groups1" msdata:rowOrder="0"
+						diffgr:hasChanges="inserted" msdata:hiddengroups_Id="0"
+						msdata:hiddenpolicies_Id="0">
+						<group diffgr:id="group1" msdata:rowOrder="0"
+							diffgr:hasChanges="inserted" msdata:hiddengroup_Id="0"
+							msdata:hiddengroups_Id="0">
+							<code>1</code>
+							<subject>휴대폰 소액결제 서비스 업무 제휴</subject>
+							<GroupCompany diffgr:id="GroupCompany1"
+								msdata:rowOrder="0" diffgr:hasChanges="inserted"
+								msdata:hiddengroup_Id="0">
+								<code>100347</code>
+								<name>(주)인포허브</name>
+							</GroupCompany>
+							<GroupCompany diffgr:id="GroupCompany2"
+								msdata:rowOrder="1" diffgr:hasChanges="inserted"
+								msdata:hiddengroup_Id="0">
+								<code>100007</code>
+								<name>㈜다날</name>
+							</GroupCompany>
+							<GroupCompany diffgr:id="GroupCompany3"
+								msdata:rowOrder="2" diffgr:hasChanges="inserted"
+								msdata:hiddengroup_Id="0">
+								<code>100024</code>
+								<name>㈜케이지모빌리언스</name>
+							</GroupCompany>
+							<GroupCompany diffgr:id="GroupCompany4"
+								msdata:rowOrder="3" diffgr:hasChanges="inserted"
+								msdata:hiddengroup_Id="0">
+								<code>100045</code>
+								<name>㈜한국사이버결제</name>
+							</GroupCompany>
+							<GroupCompany diffgr:id="GroupCompany5"
+								msdata:rowOrder="4" diffgr:hasChanges="inserted"
+								msdata:hiddengroup_Id="0">
+								<code>100348</code>
+								<name>효성에프엠에스(주)</name>
+							</GroupCompany>
+							<GroupCompany diffgr:id="GroupCompany6"
+								msdata:rowOrder="5" diffgr:hasChanges="inserted"
+								msdata:hiddengroup_Id="0">
+								<code>100034</code>
+								<name>SK플래닛</name>
+							</GroupCompany>
+						</group>
+						<group diffgr:id="group2" msdata:rowOrder="1"
+							diffgr:hasChanges="inserted" msdata:hiddengroup_Id="1"
+							msdata:hiddengroups_Id="0">
+							<code>8</code>
+							<subject>렌탈 서비스를 위한 제품(TV 등) 배송</subject>
+							<GroupCompany diffgr:id="GroupCompany7"
+								msdata:rowOrder="6" diffgr:hasChanges="inserted"
+								msdata:hiddengroup_Id="1">
+								<code>100065</code>
+								<name>삼성에스엘(주) </name>
+							</GroupCompany>
+							<GroupCompany diffgr:id="GroupCompany8"
+								msdata:rowOrder="7" diffgr:hasChanges="inserted"
+								msdata:hiddengroup_Id="1">
+								<code>100060</code>
+								<name>삼성전자로지텍㈜</name>
+							</GroupCompany>
+							<GroupCompany diffgr:id="GroupCompany9"
+								msdata:rowOrder="8" diffgr:hasChanges="inserted"
+								msdata:hiddengroup_Id="1">
+								<code>100059</code>
+								<name>삼성전자㈜</name>
+							</GroupCompany>
+							<GroupCompany diffgr:id="GroupCompany10"
+								msdata:rowOrder="9" diffgr:hasChanges="inserted"
+								msdata:hiddengroup_Id="1">
+								<code>100054</code>
+								<name>㈜스카이미디어</name>
+							</GroupCompany>
+							<GroupCompany diffgr:id="GroupCompany11"
+								msdata:rowOrder="10" diffgr:hasChanges="inserted"
+								msdata:hiddengroup_Id="1">
+								<code>100080</code>
+								<name>㈜케이티렌탈</name>
+							</GroupCompany>
+						</group>
+					</groups>
+				</policies>
+			</pprms>
+		</diffgr:diffgram>
+	</XML2Result>
+</XML2Response>
