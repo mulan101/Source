@@ -9,6 +9,7 @@ public class HelloWorld implements SimpleServlet {
 	public void handle(HttpSimpleServletRequest request, HttpSimpleServletResponse response) {
 		// TODO Auto-generated method stub
 
+		
 	}
 
 }
