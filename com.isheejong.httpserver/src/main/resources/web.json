@@ -1,0 +1,54 @@
+{
+	"host": [
+				{
+						"hostname":"localhost",
+						"port":"80",
+						"contexts":[
+									{
+										"root":"/",
+										"urls": 
+												[
+													{"helloWord.do": 
+														{
+															"servlet":"com.heejong.app.HelloWorld",
+															"view": "Hello.html"
+														}
+													},
+													{"hi.do": 
+														{
+															"servlet":"com.heejong.app.HelloWorld",
+															"view": "Hi.html"
+														}
+													}
+												]
+									}
+								  ]
+						
+				},
+				{
+						"hostname":"local",
+						"port":"80",
+						"contexts":[
+									{
+										"root":"/",
+										"urls": 
+												[
+													{"helloWord.do": 
+														{
+															"servlet":"com.heejong.app.HelloWorld",
+															"view": "Hello.html"
+														}
+													},
+													{"hi.do": 
+														{
+															"servlet":"com.heejong.app.HelloWorld",
+															"view": "Hi.html"
+														}
+													}
+												]
+									}
+								  ]
+						
+				}
+	]
+}
