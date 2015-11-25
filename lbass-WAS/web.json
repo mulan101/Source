@@ -1,0 +1,22 @@
+{
+  PORT : "8080"
+, VIRTUALHOST : [ { HOSTNAME : "default", CLASSNAME : "com.lbass.server.dispatcher.impl.RequestDispatcher" }
+				, { HOSTNAME : "localhost", CLASSNAME : "com.lbass.server.dispatcher.impl.RequestDispatcher" }
+  				, { HOSTNAME : "www.lbass.com", CLASSNAME : "com.lbass.server.dispatcher.impl.MobileRequestDispatcher" }]
+, ENCODING : "UTF-8"
+, HOST : [  {  HOSTNAME : "root"
+			 , DOCBASE : "C:/nhn_workspace/lbass-WAS/src/main/rootWebapp/"
+			 , ERRORPAGE : {"403" : "/error/err_403", "404" : "/error/err_404", "500" : "/error/err_500" }
+			 , FILTERS : [ "com.lbass.server.filter.impl.FileAccessFilter"
+						 , "com.lbass.server.filter.impl.ExtensionCheckFilter"
+					 	 ]
+			 , SERVLETS : [   {URL : "/Greeting", MAPPINGCLASS : "com.lbass.servlet.impl.Hello" }
+			 				, {URL : "/HelloTime", MAPPINGCLASS : "custom.servlet.TimePrintServlet" }
+			 			  ]
+	  	   }
+		, {    HOSTNAME : "lbass"
+			 , DOCBASE : "C:/nhn_workspace/lbass-WAS/src/main/lbassWebapp/"
+			 , ERRORPAGE : {"403" : "/error/err_lbass_403", "404" : "/error/err_lbass_404", "500" : "/error/err_lbass_500" }
+		  }
+ ]
+}
