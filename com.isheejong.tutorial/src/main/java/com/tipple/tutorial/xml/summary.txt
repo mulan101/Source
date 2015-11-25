@@ -1,0 +1,62 @@
+/**
+ *  Push Style vs Pull Style 
+ *  
+ *                              2015/10/26
+ *  hee-jong.lee
+ */
+
+XML Parsing
+1) Dom: 문서 전체를 읽어서 메모리에 Tree 형태로 적재하여 접근
+   단점: 메모리 사용량이 많다. 대용량의 XML 파일을 parsing 하게 되는 경우 많은 메모리를 사용하게 된다.
+   장점: 엘리 먼트에 대해 random 접근이 가능함( 임이의 엘리먼트에 대한 접근이 가능함)
+
+2) SAX: 메모리가 적게 소모 되고, 속도가 빠르다는 장점이 있지만 XML 엘리먼트를 하나 하나 컨트롤 해야 하며(생선상 저하)
+        XML 오브젝트에 Radmon 접근이 불가능하다. 즉, 순차적으로 이미 읽은 엘리먼트에 접근해야 하는 경우
+              처음부터 다시 읽어야 함.
+
+3) STAX: Dom + SAX 방식이 혼합된 형태로, XML 문서를 파싱 할때 하나의 Fregment 단위로 구분한다.
+         JDCB 에서 Cursor 가 record 단위로 움직이는 것과 동일 함.
+
+--------------------------------------------------------------------------------
+SAX 같은 경우는 대규모의 요청이 들어오는 GW 서버에 적용 하거나 안드로이드와 같이 메모리 사용양 관리가 중요한 곳에서 사용
+되어야 할 것 같음.
+
+
+"Pull" vs. "Push" Style API
+
+SAX is a push style API. This means that the SAX parser iterates through the XML and calls methods on the handler object provided by you. 
+For instance, when the SAX parser encounters the beginning of an XML element, 
+it calls the startElement on your handler object. It "pushes" the information from the XML into your object. 
+Hence the name "push" style API. This is also referred to as an "event driven" API. 
+Your handler object is notified with event-calls when something interesting is found in the XML document ("interesting" = elements, texts, comments etc.).
+
+
+=> Push style 이라고 함은. 내가 임이로 XML Parsing 된 위치를 이동 할 수 없다는 의미 임..
+   arser 가 호출 해주어야 만 가능함.
+
+StAX is a pull style API. This means that you have to move the StAX parser from item to item in the XML file yourself, 
+just like you do with a standard Iterator or JDBC ResultSet. 
+You can then access the XML information via the StAX parser for each such "item" encountered in the XML file ("item" = elements, texts, comments etc.).
+
+The StAX parser pull style parsing is illustrated here
+
+=> Pull style 이라고 함은. 내가 알아서 XML Parsing 위치를 이동 할 수 있다고 하는 의미 임.
+
+
+reference link: 
+  http://tutorials.jenkov.com/java-xml/stax.html#pull-vs-push-style-api
+  http://tutorials.jenkov.com/java-xml/sax-vs-stax.html#the-sax-push-model
+
+
+Dom 은 Push Style 이다. 임의로 XML Element 에 접근이 가능하다. 하지만 SAX 는 그렇지 못하다. SAX 는 순차 접근만 가능함. 순차적으로 읽다가 이미 읽은 엘리먼트에 접근 해야 하는 경우, 처음부터 다시 읽어야 함.
+그래서 둘을 함처 놓은게 STAX 이다. Pull Style 을 지원하면서 순차적으로 읽게 되므로, 메모리 사용 율이 낮다.
+
+
+Dom 메모르에 올라가 있는 XML Tree 의 내용을 변경할 수 있음.
+StAX 나, SAX 는 변경할 수 있는 기능을 제공 하지 않음.
+
+
+* StAX 의 경우 schema validation 이 없음.
+* SAX 의 경우 schema validation 이 있음.
+
+
