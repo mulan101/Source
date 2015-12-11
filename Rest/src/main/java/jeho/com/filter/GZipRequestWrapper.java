@@ -18,7 +18,7 @@ public class GZipRequestWrapper extends HttpServletRequestWrapper {
 		byte[] requestBytes = new byte[1024];
 		httpRequest.getInputStream().read(requestBytes);
 		if (requestBytes != null && requestBytes.length > -1) {
-			GZip.decompress(requestBytes);
+			bytes = GZip.decompress(requestBytes);
 		}
 	}
 
