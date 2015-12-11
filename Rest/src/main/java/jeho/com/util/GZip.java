@@ -4,7 +4,8 @@ import java.io.*;
 import java.util.zip.*;
 
 public class GZip {
-
+	private static final int BUFFER_SIZE = 1024;
+	
 	public static byte[] compress(String value) throws IOException {
 		byte[] bReturn = null;
 		ByteArrayOutputStream byteArrayOutputStream = null;
@@ -35,7 +36,7 @@ public class GZip {
 			outStream = new ByteArrayOutputStream();
 			gzipInStream = new GZIPInputStream(new BufferedInputStream(new ByteArrayInputStream(value)));
 			int size = 0;
-			byte[] buffer = new byte[1024];
+			byte[] buffer = new byte[BUFFER_SIZE];
 			while ((size = gzipInStream.read(buffer)) > 0) {
 				outStream.write(buffer, 0, size);
 			}
