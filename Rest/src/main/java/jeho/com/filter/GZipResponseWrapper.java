@@ -7,18 +7,24 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpServletResponseWrapper;
 
 public class GZipResponseWrapper extends HttpServletResponseWrapper {
-	private byte[] bytes;
+
+	private GZipOutputStream gzipOutputStream = null;
+
+	public GZipResponseWrapper(HttpServletResponse response) throws IOException {
+		super(response);
+	}
+
+	@Override
+	public ServletOutputStream getOutputStream() throws IOException {
+		if (this.gzipOutputStream == null) {
+			this.gzipOutputStream = new GZipOutputStream(getResponse().getOutputStream());
+		}
+		return this.gzipOutputStream;
+	}
 	
-	public GZipResponseWrapper(HttpServletResponse httpResponse) throws IOException{
-		super(httpResponse);	
+	public void close() throws IOException {
+		if (this.gzipOutputStream != null) {
+			this.gzipOutputStream.close();
+		}
 	}
-
-	public byte[] getBytes() {
-		return bytes;
-	}
-
-	public void setBytes(byte[] bytes) {
-		this.bytes = bytes;
-	}	
-
 }

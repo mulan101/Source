@@ -11,8 +11,6 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import jeho.com.util.GZip;
-
 public class GZipServletFilter implements Filter {
 
 	@Override
@@ -29,19 +27,37 @@ public class GZipServletFilter implements Filter {
 
 		HttpServletRequest httpRequest = (HttpServletRequest) request;
 		HttpServletResponse httpResponse = (HttpServletResponse) response;
-		GZipRequestWrapper gzipServletRequestWrapper = null;
-		
-		if (acceptEncoding(httpRequest) && contentEncoding(httpRequest)) {
-			byte[] requestBytes = new byte[1024];
-			httpRequest.getInputStream().read(requestBytes);
-			if (requestBytes != null && requestBytes.length > -1) {
-				gzipServletRequestWrapper = new GZipRequestWrapper(httpRequest);
-				gzipServletRequestWrapper.setBytes(GZip.decompress(requestBytes));
+		GZipRequestWrapper gzipRequestWrapper = null;
+		GZipResponseWrapper gzipResponseWrapper = null;
+
+		try {
+			// request 및 response 모두 압축/해제 필요
+			if (acceptEncoding(httpRequest) && contentEncoding(httpRequest)) {
+				gzipRequestWrapper = new GZipRequestWrapper(httpRequest);
+				gzipResponseWrapper = new GZipResponseWrapper(httpResponse);
+				httpResponse.addHeader("Content-Encoding", "gzip");
+				chain.doFilter(gzipRequestWrapper, gzipResponseWrapper);
+			// response 압축 필요
+			} else if (acceptEncoding(httpRequest)) {
+				gzipResponseWrapper = new GZipResponseWrapper(httpResponse);
+				httpResponse.addHeader("Content-Encoding", "gzip");
+				chain.doFilter(request, gzipResponseWrapper);
+			// request 압축해제 필요
+			} else if (contentEncoding(httpRequest)) {
+				gzipRequestWrapper = new GZipRequestWrapper(httpRequest);
+				chain.doFilter(gzipRequestWrapper, response);
+			} else {
+				chain.doFilter(request, response);
 			}
-			GZipResponseWrapper gzipResponseWrapper = new GZipResponseWrapper(httpResponse);			
-			chain.doFilter(gzipServletRequestWrapper, gzipResponseWrapper);			
-		} else {
-			chain.doFilter(request, response);
+		} catch (IOException | ServletException e) {
+			throw e;
+		} finally {
+			if (gzipRequestWrapper != null) {
+				gzipRequestWrapper.close();
+			}
+			if (gzipResponseWrapper != null) {
+				gzipResponseWrapper.close();
+			}
 		}
 	}
 
@@ -49,7 +65,7 @@ public class GZipServletFilter implements Filter {
 		String contentEncoding = httpRequest.getHeader("Content-Encoding");
 		return contentEncoding != null && contentEncoding.contains("gzip");
 	}
-	
+
 	private boolean acceptEncoding(HttpServletRequest httpRequest) {
 		String acceptEncoding = httpRequest.getHeader("Accept-Encoding");
 		return acceptEncoding != null && acceptEncoding.contains("gzip");
