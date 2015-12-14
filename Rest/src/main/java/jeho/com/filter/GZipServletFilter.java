@@ -11,6 +11,8 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import jeho.com.util.GZip;
+
 public class GZipServletFilter implements Filter {
 
 	@Override
@@ -30,7 +32,12 @@ public class GZipServletFilter implements Filter {
 		GZipRequestWrapper gzipServletRequestWrapper = null;
 		
 		if (acceptEncoding(httpRequest) && contentEncoding(httpRequest)) {
-			gzipServletRequestWrapper = new GZipRequestWrapper(httpRequest);
+			byte[] requestBytes = new byte[1024];
+			httpRequest.getInputStream().read(requestBytes);
+			if (requestBytes != null && requestBytes.length > -1) {
+				gzipServletRequestWrapper = new GZipRequestWrapper(httpRequest);
+				gzipServletRequestWrapper.setBytes(GZip.decompress(requestBytes));
+			}
 			GZipResponseWrapper gzipResponseWrapper = new GZipResponseWrapper(httpResponse);			
 			chain.doFilter(gzipServletRequestWrapper, gzipResponseWrapper);			
 		} else {
@@ -44,7 +51,7 @@ public class GZipServletFilter implements Filter {
 	}
 	
 	private boolean acceptEncoding(HttpServletRequest httpRequest) {
-		String acceptEncoding = httpRequest.getHeader("Content-Encoding");
+		String acceptEncoding = httpRequest.getHeader("Accept-Encoding");
 		return acceptEncoding != null && acceptEncoding.contains("gzip");
 	}
 }
