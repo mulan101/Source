@@ -31,7 +31,7 @@ public abstract class Sorting {
 			System.out.print(iNum + ",");
 		}
 		System.out.println("");*/
-		System.out.println("time : " + ((lEndTime-lStartTime)*0.000001) + "ns");
+		System.out.println("time : " + ((lEndTime-lStartTime)*0.000001) + "ms");
 		System.out.println("===================================================");
 	}
 	
