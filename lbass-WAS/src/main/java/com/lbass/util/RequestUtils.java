@@ -1,5 +1,7 @@
 package com.lbass.util;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -29,5 +31,11 @@ public class RequestUtils {
 		}
 		
 		return parameterMap;
+	}
+	
+	public static String getCurrentDate() {
+		Date date = new Date();
+		SimpleDateFormat sd = new SimpleDateFormat("yyyyMMdd");
+		return sd.format(date);
 	}
 }
