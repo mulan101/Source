@@ -24,7 +24,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class XSSFExcelWriter {
-	private Logger log = LoggerFactory.getLogger(getClass());
+	private static final Logger log = LoggerFactory.getLogger(XSSFExcelWriter.class);
 
 	private XSSFWorkbook workbook;
 

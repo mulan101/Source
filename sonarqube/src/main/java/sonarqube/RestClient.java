@@ -19,7 +19,7 @@ import com.google.gson.Gson;
 
 public class RestClient {
 	
-	private Logger log = LoggerFactory.getLogger(getClass());
+	private static final Logger log = LoggerFactory.getLogger(RestClient.class);
 	
 	public Map<String, Object> restCall(String sUrl, String sComponentRoots, int iPage) {
 		URL url = null;
