@@ -24,7 +24,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class XSSFExcelWriter {
-	private static final Logger log = LoggerFactory.getLogger(XSSFExcelWriter.class);
+	private static final Logger LOG = LoggerFactory.getLogger(XSSFExcelWriter.class);
 
 	private XSSFWorkbook workbook;
 
@@ -159,13 +159,13 @@ public class XSSFExcelWriter {
 			fs = new FileOutputStream(file);
 			workbook.write(fs);
 		} catch (IOException e) {
-			log.error(e.getMessage(), e);
+			LOG.error(e.getMessage(), e);
 		} finally {
 			if (fs != null)
 				try {
 					fs.close();
 				} catch (IOException e) {
-					log.error(e.getMessage(), e);
+					LOG.error(e.getMessage(), e);
 				}
 		}
 	}
@@ -174,13 +174,13 @@ public class XSSFExcelWriter {
 		try {
 			workbook.write(output);
 		} catch (IOException e) {
-			log.error(e.getMessage(), e);
+			LOG.error(e.getMessage(), e);
 		} finally {
 			if (output != null)
 				try {
 					output.close();
 				} catch (IOException e) {
-					log.error(e.getMessage(), e);
+					LOG.error(e.getMessage(), e);
 				}
 		}
 	}

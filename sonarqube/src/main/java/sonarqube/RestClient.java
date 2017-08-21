@@ -19,7 +19,7 @@ import com.google.gson.Gson;
 
 public class RestClient {
 	
-	private static final Logger log = LoggerFactory.getLogger(RestClient.class);
+	private static final Logger LOG = LoggerFactory.getLogger(RestClient.class);
 	
 	public Map<String, Object> restCall(String sUrl, String sComponentRoots, int iPage) {
 		URL url = null;
@@ -29,7 +29,7 @@ public class RestClient {
 			if (sUrl == null || sComponentRoots == null || iPage <= 0) {
 				throw new RuntimeException("Failed : Url/ComponentRoots/TotalPage not found");
 			}
-			log.info("sonarqube server call....");
+			LOG.info("sonarqube server call....");
 			url = new URL(sUrl + "?componentRoots=" + sComponentRoots + "&pageIndex=" + iPage);
 			conn = (HttpURLConnection) url.openConnection();
 			conn.setRequestMethod("GET");
@@ -41,16 +41,17 @@ public class RestClient {
 
 			BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
 
-			String output = null;
-
-			while ((output = br.readLine()) != null) {
+			
+			String output = br.readLine();
+			
+			if(output != null) {
 				responseBean = new Gson().fromJson(output, Map.class);
 			}
-			log.info("sonarqube server call complete....");
+			LOG.info("sonarqube server call complete....");
 		} catch (MalformedURLException e) {
-			log.error(e.getMessage(), e);
+			LOG.error(e.getMessage(), e);
 		} catch (IOException e1) {
-			log.error(e1.getMessage(), e1);
+			LOG.error(e1.getMessage(), e1);
 		} finally {
 			if (conn != null) {
 				conn.disconnect();
@@ -87,7 +88,7 @@ public class RestClient {
 		writer.setColumn(6, "line", "line", 1000);
 		writer.setColumn(7, "message", "message", 10000);
 		writer.setHeaderToFirstRow();
-		log.info("excel write start...");
+		LOG.info("excel write start...");
 		for(int i = 1 ; i < iLoop ; i++ ) {
 			Map<String, Object> responseMap = restCall(sUrl, sComponentRoots, i);
 			if (responseMap == null) {
@@ -101,7 +102,7 @@ public class RestClient {
 		
 		writer.setColumnsWidth();
 		writer.write(file);
-		log.info("excel write end...");
+		LOG.info("excel write end...");
 	}
 
 	public static void main(String[] args) {
