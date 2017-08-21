@@ -84,9 +84,10 @@ public class RestClient {
 		writer.setColumn(2, "type", "type", 5000);
 		writer.setColumn(3, "rule", "rule", 8000);
 		writer.setColumn(4, "status", "status", 3000);
-		writer.setColumn(5, "component", "component", 10000);
-		writer.setColumn(6, "line", "line", 1000);
-		writer.setColumn(7, "message", "message", 10000);
+		writer.setColumn(5, "resolution", "resolution", 3000);		
+		writer.setColumn(6, "component", "component", 10000);
+		writer.setColumn(7, "line", "line", 1000);
+		writer.setColumn(8, "message", "message", 10000);
 		writer.setHeaderToFirstRow();
 		LOG.info("excel write start...");
 		for(int i = 1 ; i < iLoop ; i++ ) {
