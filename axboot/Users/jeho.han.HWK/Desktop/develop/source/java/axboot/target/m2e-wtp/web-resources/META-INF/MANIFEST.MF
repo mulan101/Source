@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: prototype-axboot
+Implementation-Version: 1.0.0
+Built-By: jeho.han
+Implementation-Vendor-Id: com.axboot.jeho
+Build-Jdk: 1.8.0_161
+Implementation-URL: http://www.axboot.com/axboot
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Chequer, Inc.
+Main-Class: com.axboot.jeho.AXBootApplicationInitializer
+
